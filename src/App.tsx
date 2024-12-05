@@ -23,25 +23,22 @@ function App() {
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="flex gap-6">
-          {/* Left Sidebar - Format & AI */}
-          <div className="w-64 space-y-4">
-            <FormatSelector
-              selectedFormat={format}
-              onFormatChange={setFormat}
-            />
-            <AIAssistant />
-          </div>
+        {/* Format Selector and AI Assistant */}
+        <div className="flex items-center gap-4 mb-6">
+          <FormatSelector
+            selectedFormat={format}
+            onFormatChange={setFormat}
+          />
+          <AIAssistant />
+        </div>
 
-          {/* Editor */}
-          <div className="flex-1 h-[calc(100vh-12rem)]">
-            <ScriptEditor
-              content={content}
-              format={format}
-              onChange={setContent}
-            />
-          </div>
+        {/* Editor */}
+        <div className="h-[calc(100vh-16rem)]">
+          <ScriptEditor
+            content={content}
+            format={format}
+            onChange={setContent}
+          />
         </div>
       </div>
     </div>
