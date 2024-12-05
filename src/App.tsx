@@ -4,6 +4,7 @@ import ScriptEditor from './components/Editor/ScriptEditor';
 import FormatSelector from './components/FormatSelector/FormatSelector';
 import AIAssistant from './components/AIAssistant/AIAssistant';
 import MoreOptions from './components/MoreOptions/MoreOptions';
+import ScenesSidebar from './components/ScenesSidebar/ScenesSidebar';
 import { ScriptFormat } from './types/script';
 
 function App() {
@@ -33,13 +34,16 @@ function App() {
           <MoreOptions />
         </div>
 
-        {/* Editor */}
-        <div className="h-[calc(100vh-16rem)]">
-          <ScriptEditor
-            content={content}
-            format={format}
-            onChange={setContent}
-          />
+        {/* Main Content with Scenes Sidebar */}
+        <div className="flex gap-6">
+          <ScenesSidebar />
+          <div className="flex-1 h-[calc(100vh-16rem)]">
+            <ScriptEditor
+              content={content}
+              format={format}
+              onChange={setContent}
+            />
+          </div>
         </div>
       </div>
     </div>
