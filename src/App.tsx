@@ -3,7 +3,7 @@ import { Pen } from 'lucide-react';
 import ScriptEditor from './components/Editor/ScriptEditor';
 import FormatSelector from './components/FormatSelector/FormatSelector';
 import AIAssistant from './components/AIAssistant/AIAssistant';
-import Sidebar from './components/Sidebar/Sidebar';
+import MoreOptions from './components/MoreOptions/MoreOptions';
 import { ScriptFormat } from './types/script';
 
 function App() {
@@ -23,13 +23,14 @@ function App() {
           </div>
         </div>
 
-        {/* Format Selector and AI Assistant */}
+        {/* Format Selector, AI Assistant, and More Options */}
         <div className="flex items-center gap-4 mb-6">
           <FormatSelector
             selectedFormat={format}
             onFormatChange={setFormat}
           />
           <AIAssistant />
+          <MoreOptions />
         </div>
 
         {/* Editor */}
