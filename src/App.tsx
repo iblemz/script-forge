@@ -14,7 +14,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-100">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="mb-8">
           <div className="flex items-center">
             <Pen className="w-8 h-8 text-blue-400 mr-3" />
             <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -24,9 +24,9 @@ function App() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="flex gap-6">
           {/* Left Sidebar - Format & AI */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="w-64 space-y-4">
             <FormatSelector
               selectedFormat={format}
               onFormatChange={setFormat}
@@ -35,17 +35,12 @@ function App() {
           </div>
 
           {/* Editor */}
-          <div className="lg:col-span-8 h-[calc(100vh-12rem)]">
+          <div className="flex-1 h-[calc(100vh-12rem)]">
             <ScriptEditor
               content={content}
               format={format}
               onChange={setContent}
             />
-          </div>
-
-          {/* Right Sidebar - Organization */}
-          <div className="lg:col-span-2 h-[calc(100vh-12rem)]">
-            <Sidebar />
           </div>
         </div>
       </div>
